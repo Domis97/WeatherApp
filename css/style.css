@@ -1,0 +1,60 @@
+body {
+    font-family: 'Kalam', cursive;
+    text-align: center;
+    background: url("../img/clouds-background.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+p {
+    margin: 15px;
+}
+
+.center-block {
+    float: none;
+}
+
+.info-box {
+    width: 250px;
+    height: auto;
+    text-align: left;
+    color: #000;
+    padding: 20px;
+    border-radius: 25px;
+    border: 3px rgba(170,191,218,1) solid;
+    font-weight: 700;
+    margin: 2% auto;
+    background: rgb(105,155,200);
+    background: linear-gradient(rgba(105,155,200,1) 0%, rgba(181,197,216,1) 57%);
+    overflow: auto;
+}
+
+.gen-status {
+    font-size: 150%;
+    padding-top: 30px;
+    text-transform: capitalize;
+}
+
+.icon {
+    border: 2px rgba(170,191,218,1) solid;
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:50%;
+}
+
+.hour-disp {
+    font-size: 150%;
+}
+
+.head {
+    margin-bottom: 50px;
+}
+
+.boxes {
+    margin-top: 50px;
+}
+
+
+
+
+
