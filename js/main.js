@@ -7,7 +7,7 @@ document.getElementById('city-input').onchange = function () {
     resetBox();
     city = getCity();
     city = cutCityName(city);
-    setTitle(city);
+    // setTitle(city);
     city = accentFold(city);
     loadDoc(city);
 };
@@ -28,13 +28,13 @@ function getCity() {
     return input;
 }
 
-function setTitle(city) {
-    //wrapping text node to easily remove it in resetBox()
-    var wrapCityElem = document.createElement('data-elem');
-    var cityNode = document.createTextNode("dla " + city);
-    wrapCityElem.appendChild(cityNode);
-    document.getElementById('title').appendChild(wrapCityElem);
-}
+// function setTitle(city) {
+//     //wrapping text node to easily remove it in resetBox()
+//     var wrapCityElem = document.createElement('data-elem');
+//     var cityNode = document.createTextNode("dla " + city);
+//     wrapCityElem.appendChild(cityNode);
+//     document.getElementById('title').appendChild(wrapCityElem);
+// }
 
 function cutCityName(city) {
     var pos = city.indexOf(",");
@@ -58,6 +58,20 @@ function setInputBorder(width, style, color ) {
 }
 
 
+//checks whether personalisation checkbox is checked
+function ifNotChecked(name) {
+    var param = document.getElementById(name);
+
+    for (var i = 0; i < 4;i++) {
+        if (!param.checked) {
+            document.getElementsByClassName(name)[i].style.display = 'none';
+        } else {
+            document.getElementsByClassName(name)[i].style.display = 'block';
+        }
+    }
+}
+
+
 function loadDoc(city) {
 
     var dataFile = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&APPID=f6f7e39f8b15762fdd708427284f001f";
@@ -74,11 +88,11 @@ function loadDoc(city) {
                 //set input border in case first input was wrong
                 setInputBorder("1px", "solid", "#ccc");
 
-                for(var i = 0; i < 4; i++) {
+                for (var i = 0; i < 4; i++) {
                     //add hour and get substring so it shows only hour
                     //wrapping text node to easily remove it in resetBox()
                     var hour = jsonObj.list[i].dt_txt;
-                    hour = hour.substr(11,5);
+                    hour = hour.substr(11, 5);
                     var wrapHourElement = document.createElement('data-elem');
                     var hourNode = document.createTextNode(hour);
                     wrapHourElement.appendChild(hourNode);
@@ -100,7 +114,7 @@ function loadDoc(city) {
                         document.getElementsByClassName("downfall")[i].appendChild(wrapDwnfallElem);
                     } else {
                         var dwnFall = jsonObj.list[i].rain["3h"].toFixed(2);
-                        var dwnfallNode = document.createTextNode(dwnFall) ;
+                        var dwnfallNode = document.createTextNode(dwnFall);
                         wrapDwnfallElem.appendChild(dwnfallNode);
                         document.getElementsByClassName("downfall")[i].appendChild(wrapDwnfallElem);
                     }
@@ -158,3 +172,38 @@ function initializeAutocomplete() {
 }
 
 google.maps.event.addDomListener(window, 'load', initializeAutocomplete);
+
+var tempCheckbox = document.getElementById('temp');
+var dwnFallCheckbox = document.getElementById('downfall');
+var windCheckbox = document.getElementById('wind');
+var cloudsCheckbox = document.getElementById('clouds');
+var pressureCheckbox = document.getElementById('pressure');
+
+tempCheckbox.onchange = function () {
+    ifNotChecked('temp');
+}
+
+dwnFallCheckbox.onchange = function () {
+    ifNotChecked('downfall');
+}
+
+windCheckbox.onchange = function () {
+    ifNotChecked('wind');
+}
+
+cloudsCheckbox.onchange = function () {
+    ifNotChecked('clouds');
+}
+
+pressureCheckbox.onchange = function () {
+    ifNotChecked('pressure');
+}
+
+
+//to prevent personalisation dropdown from hiding when clicked
+//onclick in HTML because doesn't want to work in .js after
+//adding .onclick or .addEventListener
+function stop() {
+    event.stopPropagation();
+}
+

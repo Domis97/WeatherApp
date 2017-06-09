@@ -1,33 +1,189 @@
 body {
-    font-family: 'Kalam', cursive;
+    font-family: 'Sarala', sans-serif;
     text-align: center;
-    background: url("../img/clouds-background.jpg") no-repeat center fixed;
-    -webkit-background-size: cover;
-    background-size: cover;
+    background: #f1ece5;
+    /*background: #d6d3d2;*/
+}
+
+div {
+    display: block;
 }
 
 p {
     margin: 15px;
 }
 
+
+/*NAVBAR SECTION*/
+
+
+.navbar {
+     margin-bottom: 0;
+ }
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.navbar-toggle {
+    z-index: 3;
+}
+
+
+/*PERSONALISATION DROPDOWN MENU */
+
+
+.dropdown-menu {
+     background: #222;
+ }
+.dropdown-menu span {
+    font-size: 110%;
+    color: #cccccc;
+    margin-left: 10%;
+}
+
+.dropdown-menu li {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-bottom: 1px solid #000000;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+
 .center-block {
     float: none;
 }
 
+/*SLIDER IN DROPDOWN*/
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+    vertical-align: middle;
+    float: right;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #cccccc;
+    -webkit-transition: .4s;
+    -moz-transition: .4s ;
+    -ms-transition: .4s ;
+    -o-transition: .4s ;
+    transition: .4s ;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+input:checked + .slider {
+    background-color: #424242;
+}
+
+input:checked + .slider {
+    -webkit-box-shadow: 0 0 1px #424242;
+    -moz-box-shadow: 0 0 1px #424242;
+    box-shadow: 0 0 1px #424242;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -moz-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    -o-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+.slider.round {
+    -webkit-border-radius: 34px;
+    -moz-border-radius: 34px;
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/*TITLE SECTION*/
+
+
+#title-section {
+    background: url("../img/architecture-1850129_1920.jpg") no-repeat center fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding-bottom: 135px;
+    padding-top: 99px;
+}
+
+.head {
+    margin-bottom: 30px;
+    visibility: hidden;
+}
+
+
+/*BOXES SECTION*/
+
+
+.boxes {
+    margin-top: 50px;
+}
+
 .info-box {
-    width: 250px;
+    width: 210px;
     height: auto;
+    border-right: 1px #424242 solid;
+    display: inline-block;
+    flex: 1;
+    margin-right: -10px;
     text-align: left;
-    color: #000;
+    color: #0000;
     padding: 20px;
-    border-radius: 25px;
-    border: 3px rgba(170,191,218,1) solid;
+    /*border: 3px #d3b486 solid;*/
     font-weight: 700;
-    margin: 2% auto;
-    background: rgb(105,155,200);
-    background: linear-gradient(rgba(105,155,200,1) 0%, rgba(181,197,216,1) 57%);
+    background-color:rgba(150,150,150,0.6);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 4px;
+
     overflow: auto;
 }
+
+.info-box:last-child {
+    border-right: none;
+}
+
 
 .gen-status {
     font-size: 150%;
@@ -36,25 +192,13 @@ p {
 }
 
 .icon {
-    border: 2px rgba(170,191,218,1) solid;
-    -webkit-border-radius:100%;
-    -moz-border-radius:100%;
+    border: 1px #D3D3D3 solid;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
     border-radius:50%;
 }
 
 .hour-disp {
     font-size: 150%;
 }
-
-.head {
-    margin-bottom: 50px;
-}
-
-.boxes {
-    margin-top: 50px;
-}
-
-
-
-
 
