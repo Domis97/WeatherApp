@@ -1,10 +1,10 @@
-## WeatherApp
+# WeatherApp
 
 WeatherApp allows user to get weather forecast hourly depending on searched place along with features customization. 
 The application uses **OpenWeatherMap API** to get JSON forecast data (using AJAX) and **GOOGLE PLACES API** to get 
 city prompts for searching.
 
-# API Reference
+## API Reference
 **GOOGLE PLACES API**
 https://developers.google.com/places/android-api/autocomplete
 
