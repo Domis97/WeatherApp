@@ -202,9 +202,7 @@ pressureCheckbox.onchange = function () {
 };
 
 
-//to prevent personalisation dropdown from hiding when clicked
-//onclick in HTML file because doesn't want to work in .js after
-//adding .onclick or .addEventListener
+//prevent customization dropdown from hiding when clicked
 document.getElementsByClassName('dropdown-menu')[0].onclick = function () {
     event.stopPropagation();
 };
