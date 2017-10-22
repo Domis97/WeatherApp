@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weather App</title>
+    <title>Weather Hourly</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Sarala" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+
 
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">
@@ -17,17 +18,20 @@
             <span class="icon-bar"></span>
         </button>
     </div>
-    <a class="navbar-brand" href="#">Pogoda</a>
+    <a class="navbar-brand" href="#">Weather</a>
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
-            <li><a href="#">Lewo</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">16-days</a> </li>
+            <li class="active"><a href="#">Hourly</a> </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Personalizuj<b class="caret"></b></a>
-                <ul class="dropdown-menu" onclick="stop()">
-                    <li class="dropdown-divider">
-                        <span>Temperatura</span>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customize<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <span>Temperature</span>
                         <label class="switch">
                             <input type="checkbox" id="temp" checked>
                             <div class="slider round"></div>
@@ -36,7 +40,7 @@
 
 
                     <li>
-                        <span>Opady</span>
+                        <span>Downfall</span>
                         <label class="switch">
                             <input type="checkbox" id="downfall" checked>
                             <div class="slider round"></div>
@@ -44,7 +48,7 @@
                     </li>
 
                     <li>
-                        <span>Wiatr</span>
+                        <span>Wind</span>
                         <label class="switch">
                             <input type="checkbox" id="wind" checked>
                             <div class="slider round"></div>
@@ -52,7 +56,7 @@
                     </li>
 
                     <li>
-                        <span>Zachmurzenie</span>
+                        <span>Clouds</span>
                         <label class="switch">
                             <input type="checkbox" id="clouds" checked>
                             <div class="slider round"></div>
@@ -60,7 +64,7 @@
                     </li>
 
                     <li>
-                        <span>Ciśnienie</span>
+                        <span>Pressure</span>
                         <label class="switch">
                             <input type="checkbox" id="pressure" checked>
                             <div class="slider round"></div>
@@ -80,7 +84,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 center-block" id="input-div">
-                <input type="text" id="city-input" class="form-control" placeholder="Wprowadź miasto">
+                <input type="text" id="city-input" class="form-control" placeholder="Search for a city">
             </div>
         </div>
     </div>
@@ -88,6 +92,8 @@
 </section>
 
 <section id="boxes-section">
+
+    <span id="city-headline"></span>
 
 
     <div class="container">
@@ -97,11 +103,11 @@
                 <span>
                     <div class="info-box">
                     <div class="hour-disp text-center"></div>
-                    <p class="temp">Temperatura :  </p>
-                    <p class="downfall">Opady : </p>
-                    <p class="wind">Wiatr :  </p>
-                    <p class="clouds">Zachmurzenie : </p>
-                    <p class="pressure">Ciśnienie : </p>
+                    <p class="temp">Temperature :  </p>
+                    <p class="downfall">Downfall : </p>
+                    <p class="wind">Wind :  </p>
+                    <p class="clouds">Clouds : </p>
+                    <p class="pressure">Pressure : </p>
                     <div class="gen-icon text-center">
                         <img src="" class="icon">
                     </div>
@@ -112,13 +118,14 @@
 
 
 
+
                     <div class="info-box">
                     <div class="hour-disp text-center"></div>
-                    <p class="temp">Temperatura :  </p>
-                    <p class="downfall">Opady : </p>
-                    <p class="wind">Wiatr :  </p>
-                    <p class="clouds">Zachmurzenie : </p>
-                    <p class="pressure">Ciśnienie : </p>
+                    <p class="temp">Temperature :  </p>
+                    <p class="downfall">Downfall : </p>
+                    <p class="wind">Wind :  </p>
+                    <p class="clouds">Clouds : </p>
+                    <p class="pressure">Pressure : </p>
                     <div class="gen-icon text-center">
                         <img src="" class="icon">
                     </div>
@@ -129,13 +136,13 @@
 
                     <div class="info-box">
                     <div class="hour-disp text-center"></div>
-                    <p class="temp">Temperatura :  </p>
-                    <p class="downfall">Opady : </p>
-                    <p class="wind">Wiatr :  </p>
-                    <p class="clouds">Zachmurzenie : </p>
-                    <p class="pressure">Ciśnienie : </p>
+                    <p class="temp">Temperature :  </p>
+                    <p class="downfall">Downfall : </p>
+                    <p class="wind">Wind :  </p>
+                    <p class="clouds">Clouds : </p>
+                    <p class="pressure">Pressure : </p>
                     <div class="gen-icon text-center">
-                            <img src="" class="icon">
+                        <img src="" class="icon">
                     </div>
                     <div class="gen-status text-center"></div>
                 </div>
@@ -144,13 +151,13 @@
 
                     <div class="info-box">
                     <div class="hour-disp text-center"></div>
-                    <p class="temp">Temperatura :  </p>
-                    <p class="downfall">Opady : </p>
-                    <p class="wind">Wiatr :  </p>
-                    <p class="clouds">Zachmurzenie : </p>
-                    <p class="pressure">Ciśnienie : </p>
+                    <p class="temp">Temperature :  </p>
+                    <p class="downfall">Downfall : </p>
+                    <p class="wind">Wind :  </p>
+                    <p class="clouds">Clouds : </p>
+                    <p class="pressure">Pressure : </p>
                     <div class="gen-icon text-center">
-                            <img src="" class="icon">
+                        <img src="" class="icon">
                     </div>
                     <div class="gen-status text-center"></div>
                 </div>
@@ -161,10 +168,35 @@
     </div>
 </section>
 
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <h3>Forecasts</h3>
+                <ul>
+                    <li><a href="#">Lorem ipsum dolor</a></li>
+                    <li><a href="#">Sed lacinia mattis</a></li>
+                    <li><a href="#">Quisque scelerisque</a></li>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIvvKHtAjhvlHOvtEfM7PZnqMsfVJgjwM&language=en&libraries=places"></script>
-<script src="js/main.js"></script>
+                </ul>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <h3>About us</h3>
+                <ul>
+                    <li><a href="#">Morbi placerat quis</a></li>
+                    <li><a href="#">Nullam ullamcorper</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIvvKHtAjhvlHOvtEfM7PZnqMsfVJgjwM&language=en&libraries=places"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

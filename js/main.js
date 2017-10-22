@@ -1,13 +1,17 @@
+var apiKey = config.WEATHER_KEY;
 var accentMap = {'ą': 'a','ć':'c','ę':'e','ł' : 'l', 'ń' : 'n', 'ó':'o', 'ś':'s', 'ż':'z', 'ź':'z',
     'Ą' : 'A', 'Ć' : 'C', 'Ę' : 'E', 'Ł' : 'L', 'Ó' : 'O', 'Ś' : 'S', 'Ż' : 'Z', 'Ź' : 'Z'};
 var city = "";
 
 
+window.onload = function () {
+    loadDoc('Warsaw');
+};
+
 document.getElementById('city-input').onchange = function () {
     resetBox();
     city = getCity();
     city = cutCityName(city);
-    // setTitle(city);
     city = accentFold(city);
     loadDoc(city);
 };
@@ -24,21 +28,18 @@ function resetBox() {
 }
 
 function getCity() {
-    var input = document.getElementById('city-input').value;
-    return input;
+    return document.getElementById('city-input').value;
 }
 
-// function setTitle(city) {
-//     //wrapping text node to easily remove it in resetBox()
-//     var wrapCityElem = document.createElement('data-elem');
-//     var cityNode = document.createTextNode("dla " + city);
-//     wrapCityElem.appendChild(cityNode);
-//     document.getElementById('title').appendChild(wrapCityElem);
-// }
 
 function cutCityName(city) {
     var pos = city.indexOf(",");
-    return city.substr(0, pos);
+    if (pos !== -1) {
+        return city.substr(0, pos);
+    } else {
+        return city;
+    }
+
 }
 
 //changes accented letters
@@ -58,7 +59,7 @@ function setInputBorder(width, style, color ) {
 }
 
 
-//checks whether personalisation checkbox is checked
+//checks whether customization checkbox is checked
 function ifNotChecked(name) {
     var param = document.getElementById(name);
 
@@ -74,7 +75,7 @@ function ifNotChecked(name) {
 
 function loadDoc(city) {
 
-    var dataFile = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&APPID=f6f7e39f8b15762fdd708427284f001f";
+    var dataFile = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&APPID=" + apiKey;
     var xhttp = new XMLHttpRequest();
 
 
@@ -179,31 +180,31 @@ var windCheckbox = document.getElementById('wind');
 var cloudsCheckbox = document.getElementById('clouds');
 var pressureCheckbox = document.getElementById('pressure');
 
+
 tempCheckbox.onchange = function () {
     ifNotChecked('temp');
-}
+};
 
 dwnFallCheckbox.onchange = function () {
     ifNotChecked('downfall');
-}
+};
 
 windCheckbox.onchange = function () {
     ifNotChecked('wind');
-}
+};
 
 cloudsCheckbox.onchange = function () {
     ifNotChecked('clouds');
-}
+};
 
 pressureCheckbox.onchange = function () {
     ifNotChecked('pressure');
-}
+};
 
 
 //to prevent personalisation dropdown from hiding when clicked
-//onclick in HTML because doesn't want to work in .js after
+//onclick in HTML file because doesn't want to work in .js after
 //adding .onclick or .addEventListener
-function stop() {
+document.getElementsByClassName('dropdown-menu')[0].onclick = function () {
     event.stopPropagation();
-}
-
+};

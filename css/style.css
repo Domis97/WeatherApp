@@ -2,7 +2,6 @@ body {
     font-family: 'Sarala', sans-serif;
     text-align: center;
     background: #f1ece5;
-    /*background: #d6d3d2;*/
 }
 
 div {
@@ -31,6 +30,10 @@ p {
 
 .navbar-toggle {
     z-index: 3;
+}
+
+.navbar-left li {
+    border-right: #000 1px solid;
 }
 
 
@@ -145,39 +148,40 @@ input:checked + .slider:before {
     background-size: cover;
     padding-bottom: 135px;
     padding-top: 99px;
-}
-
-.head {
-    margin-bottom: 30px;
-    visibility: hidden;
+    margin-bottom: 25px;
 }
 
 
 /*BOXES SECTION*/
 
+#city-headline {
+    font-size: 200%;
+    font-weight: 700;
+}
 
 .boxes {
-    margin-top: 50px;
+    margin-top: 25px;
+    margin-bottom: 100px;
+    padding-top: 25px;
+    border-top: #D3D3D3 solid 1px;
 }
 
 .info-box {
     width: 210px;
-    height: auto;
+    height: 402px;
     border-right: 1px #424242 solid;
     display: inline-block;
     flex: 1;
-    margin-right: -10px;
+    margin-right: -5px;
     text-align: left;
-    color: #0000;
     padding: 20px;
-    /*border: 3px #d3b486 solid;*/
     font-weight: 700;
     background-color:rgba(150,150,150,0.6);
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 4px;
-
     overflow: auto;
+    color: #000;
 }
 
 .info-box:last-child {
@@ -200,5 +204,31 @@ input:checked + .slider:before {
 
 .hour-disp {
     font-size: 150%;
+}
+
+.footer {
+    background: #222;
+    color: #9d9d9d;
+}
+
+
+li:before {
+    display: inline-block;
+    height: 1rem;
+    width: .5rem;
+}
+
+/*FOOTER*/
+
+footer h3 {
+    font-size: 23px;
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+footer ul {
+    list-style-type: none;
+    display: block;
+    padding: 20px;
 }
 
